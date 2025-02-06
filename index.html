@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akses Cepat Sosial Media</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+        
+        :root {
+            --bg-color: #001f3f;
+            --card-bg: rgba(255, 255, 255, 0.1);
+            --text-color: white;
+            --primary-dark: linear-gradient(160deg, #fcfcfc, #000000);
+            --primary-light: linear-gradient(160deg, #0080ff, #001931);
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at top, var(--bg-color), #000);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+            transition: background 0.5s ease-in-out;
+        }
+        
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png');
+            animation: animateBg 30s linear infinite;
+        }
+        
+        @keyframes animateBg {
+            from { transform: translateY(0); }
+            to { transform: translateY(-100px); }
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: var(--card-bg);
+            padding: 50px;
+            border-radius: 25px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 15px 50px rgba(255, 255, 255, 0.2);
+            width: 420px;
+            text-align: center;
+            position: relative;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h1 {
+            font-size: 34px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            background: var(--card-bg);
+            background-clip: text;
+            animation: glow 1.5s infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 0 0 10px rgba(3, 3, 3, 0.5); }
+            to { text-shadow: 0 0 20px rgb(255, 255, 255); }
+        }
+        
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            width: 100%;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-light);
+            color: white;
+            text-decoration: none;
+            padding: 16px;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            transition: all 0.4s ease-in-out;
+            box-shadow: 0 5px 20px rgba(0, 123, 255, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-links a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 40px rgba(0, 123, 255, 0.8);
+        }
+        
+        .social-links a i {
+            margin-right: 10px;
+            font-size: 24px;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-links a:hover i {
+            transform: rotate(360deg);
+        }
+        
+        .theme-toggle {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+        
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+        
+        .footer {
+            margin-top: 25px;
+            font-size: 15px;
+            opacity: 0.9;
+        }
+        
+        .dark-mode .social-links a {
+            background: var(--primary-dark);
+            box-shadow: 0 5px 20px rgba(0, 31, 63, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="animated-bg"></div>
+    <div class="container">
+        <div class="theme-toggle" onclick="toggleTheme()">
+            <i class="fas fa-moon"></i>
+        </div>
+        <h1>SOSMED ZHARVIAN</h1>
+        <div class="social-links">
+            <a href="https://www.instagram.com/nakayama_kazuya_?igsh=MWc5d2tneThjeTMzeA==" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://wa.me" target="_blank" onclick="showMessage(event)"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://facebook.com" target="_blank" onclick="showMessage(event)"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://twitter.com" target="_blank" onclick="showMessage(event)"><i class="fab fa-twitter"></i> Twitter</a>
+        </div>
+        <div class="footer">© 2025 Akses Cepat - All Rights Reserved</div>
+    </div>
+    
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            let isDark = document.body.classList.contains('dark-mode');
+            document.documentElement.style.setProperty('--bg-color', isDark ? '#ffffff' : '#001f3f');
+            document.documentElement.style.setProperty('--text-color', isDark ? '#000' : 'white');
+            document.documentElement.style.setProperty('--card-bg', isDark ? 'rgba(0, 0, 0, 0.1)' : 'rgba(255, 255, 255, 0.1)');
+        }
+
+        function showMessage(event) {
+            event.preventDefault(); // Mencegah link untuk terbuka
+            alert("Admin Males Input :v");
+        }
+    </script>
+</body>
+</html>
