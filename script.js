@@ -13,5 +13,5 @@ function showMessage(event) {
 
 function showMessage(grup) {
     event.preventDefault(); // Mencegah link untuk terbuka
-    alert("5K/DAY :v");
+    alert("5K/HARI :v");
 }
