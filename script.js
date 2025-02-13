@@ -10,3 +10,8 @@ function showMessage(event) {
     event.preventDefault(); // Mencegah link untuk terbuka
     alert("Admin Males Input :v");
 }
+
+function showMessage(grup) {
+    event.preventDefault(); // Mencegah link untuk terbuka
+    alert("5K/DAY :v");
+}
