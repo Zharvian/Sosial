@@ -12,6 +12,6 @@ function showMessage(event) {
 }
 
 function showMessage(grup) {
-    event.preventDefault(); // Mencegah link untuk terbuka
+    grup.preventDefault(); // Mencegah link untuk terbuka
     alert("10K/HARI :v");
 }
