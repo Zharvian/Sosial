@@ -8,5 +8,5 @@ function toggleTheme() {
 
 function showMessage(event) {
     event.preventDefault(); // Mencegah link untuk terbuka
-    alert("Admin Males Input :v");
+    alert("Hmmmmmmmm :v");
 }
